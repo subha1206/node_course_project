@@ -1,0 +1,23 @@
+{
+  "name": "node_course_project",
+  "version": "1.0.0",
+  "description": "Learning Node-express-mongo",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/subha1206/node_course_project.git"
+  },
+  "author": "Subha Sarkar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/subha1206/node_course_project/issues"
+  },
+  "homepage": "https://github.com/subha1206/node_course_project#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
