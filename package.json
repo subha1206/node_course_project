@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/subha1206/node_course_project#readme",
   "dependencies": {
+    "chalk": "^4.1.0",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "morgan": "^1.10.0"
   }
