@@ -7,6 +7,10 @@ router.param('id', (req, res, next, val) => {
 });
 
 router
+  .route('/top-5-tour')
+  .get(tourControllers.aliasTopTours, tourControllers.getAllTours);
+
+router
   .route('/')
   .get(tourControllers.getAllTours)
   .post(tourControllers.createTour);
