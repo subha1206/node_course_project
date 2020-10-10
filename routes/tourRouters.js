@@ -6,6 +6,7 @@ router.param('id', (req, res, next, val) => {
   next();
 });
 
+router.route('/tour-stats').get(tourControllers.getTourStats);
 router
   .route('/top-5-tour')
   .get(tourControllers.aliasTopTours, tourControllers.getAllTours);
