@@ -4,6 +4,11 @@ const log = console.log;
 const dotenv = require('dotenv');
 dotenv.config();
 
+process.on('uncaughtException', (err) => {
+  log(chalk.redBright(`${err.name}: ${err.message}`));
+  process.exit(1);
+});
+
 const app = require('./app');
 
 mongoose
@@ -14,17 +19,17 @@ mongoose
     useUnifiedTopology: true,
   })
   .then(() => {
-    log(chalk.cyanBright(`DB connection successful`));
+    log(chalk.magentaBright(`DB connection successful`));
   });
 
-// testTour
-//   .save()
-//   .then((doc) => {
-//     log(doc);
-//   })
-//   .catch((err) => log(err));
-
 const port = process.env.PORT || 5000;
-app.listen(port, () => {
+const server = app.listen(port, () => {
   log(chalk.blueBright(`Server is running on ${port}`));
+});
+
+process.on('unhandledRejection', (err) => {
+  log(chalk.redBright(`${err.name}: ${err.message}`));
+  server.close(() => {
+    process.exit(1);
+  });
 });
